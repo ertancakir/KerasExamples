@@ -10,11 +10,13 @@ training_data = data.values
 
 train_X = np.array(training_data[:,0:4], dtype="float32")
 data_Y = training_data[:,4]
-
-classes = np.unique(data_Y)
-nClasses = len(classes)
-dimData = np.prod(train_X.shape[1:])
-
+'''
+Target data --> One hot encoding
+Example:
+Iris-setosa     : [1 0 0]
+Iris-versicolor : [0 1 0]
+Iris-virginia   : [0 0 1]
+'''
 encoder = LabelEncoder()
 encoder.fit(data_Y)
 encoded_Y = encoder.transform(data_Y)
