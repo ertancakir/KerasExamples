@@ -20,7 +20,7 @@ encoder.fit(output_data)
 encoded_output_data = encoder.transform(output_data)
 output_data_one_hot = np_utils.to_categorical(encoded_output_data)
 
-files = glob.glob("./letters/*.jpeg")
+files = glob.glob("./train/*.jpeg")
 
 for file in files:
     image = cv2.imread(file)
